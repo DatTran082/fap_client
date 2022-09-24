@@ -115,7 +115,7 @@ const Header: React.FC<HeaderProps> = (props) => {
             {
               content: (
                 <Link href="/">
-                  <a className="logo">Admin Template</a>
+                  <a className="logo">FPT University Academic Portal</a>
                 </Link>
               ),
             },
@@ -149,11 +149,11 @@ const Header: React.FC<HeaderProps> = (props) => {
               content: (
                 <a
                   className="left"
-                  href={`https://github.com/paljs/nextjs-admin-template`}
+                  href={`https://fu.edunext.vn/?CampusCode=APHL&subjectCode=SSC102&semester=Fall2022&ClassName=IS1421&SessionN0=9`}
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span className="github">Support us in GitHub</span>
+                  <span className="github">EduNext</span>
                   <img src={`https://badgen.net/github/stars/paljs/nextjs-admin-template`} />
                 </a>
               ),
@@ -177,12 +177,12 @@ const Header: React.FC<HeaderProps> = (props) => {
                   placement="bottom"
                   currentPath={router.pathname}
                   items={[
-                    { title: 'Profile', link: { href: '/modal-overlays/tooltip' } },
+                    { title: 'Profile', link: { href: '/modal-overlays/profile' } },
                     { title: 'Log out', link: { href: '/logout' } },
                   ]}
                   Link={Link}
                 >
-                  <User image="url('/icons/icon-72x72.png')" name="Ahmed Elywa" title="Manger" size="Medium" />
+                  <User image="url('/icons/icon-72x72.png')" name="Dat Tran" title="Manger" size="Medium" />
                 </ContextMenu>
               ),
             },

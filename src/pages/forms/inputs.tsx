@@ -5,15 +5,18 @@ import { Checkbox } from '@paljs/ui/Checkbox';
 import { InputGroup } from '@paljs/ui/Input';
 import Col from '@paljs/ui/Col';
 import Row from '@paljs/ui/Row';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Layout from 'Layouts';
+import userAPI from 'api/userApi';
 
 const options = [
   { value: 'chocolate', label: 'Chocolate' },
   { value: 'strawberry', label: 'Strawberry' },
   { value: 'vanilla', label: 'Vanilla' },
 ];
+
+
 
 const Input = styled(InputGroup)`
   margin-bottom: 10px;
@@ -25,6 +28,15 @@ const InputPage = () => {
     2: false,
     3: false,
   });
+
+  useEffect(() => {
+    const fetchdata = async () => {
+      const data = await userAPI.getProfile();
+      console.log(data);
+    }
+
+    fetchdata()
+  }, [])
 
   const onChangeCheckbox = (value: boolean, name: number) => {
     setCheckbox({ ...checkbox, [name]: value });
